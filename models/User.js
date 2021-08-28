@@ -33,8 +33,7 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         require: true,
-        max: 50,
-        unique: true
+        max: 50
     },
     password: {
         type: String,
@@ -44,6 +43,9 @@ const UserSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    token: {
+        type: String
     }
 },
     {
