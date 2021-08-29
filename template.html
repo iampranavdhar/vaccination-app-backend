@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vaccine List</title>
+  </head>
+  <body>
+    {{# each details}}
+    <h1>Vaccine Info</h1>
+    <ul>
+      <li>Name: {{this.name}}</li>
+      <li>Age: {{this.age}}</li>
+      <li>Gender: {{this.gender}}</li>
+      <li>Date of Birth: {{this.dob}}</li>
+      <li>AadharNumber : {{this.aadharNumber}}</li>
+      <li>address: {{this.address}}</li>
+      <li>phone: {{this.mobile}}</li>
+      <li>email : {{this.email}}</li>
+      <li>vaccinated: {{this.vaccinated}}</li>
+      <br />
+      {{/each}}
+    </ul>
+  </body>
+</html>
