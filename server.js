@@ -3,6 +3,9 @@ import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv"
 import authRoutes from "./routes/auth.js"
+import vaccineCenterRoutes from "./routes/vaccineCenters.js"
+import transactionRoutes from "./routes/transactions.js"
+
 import cookieParser from "cookie-parser"
 
 /* App Config */
@@ -17,6 +20,8 @@ app.use(cookieParser());
 
 /* API Routes */
 app.use("/api/auth", authRoutes)
+app.use("/api/centers", vaccineCenterRoutes)
+app.use("/api/slots", transactionRoutes)
 
 /* MongoDB connection */
 mongoose.connect(

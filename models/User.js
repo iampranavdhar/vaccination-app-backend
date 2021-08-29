@@ -44,6 +44,14 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    firstDoseStatus: {
+        type: String,
+        default: "Not Done"
+    },
+    secondDoseStatus: {
+        type: String,
+        default: "Not Done"
+    },
     token: {
         type: String
     }
