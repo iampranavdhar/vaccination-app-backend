@@ -2,21 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Vaccine List</title>
+    <title>Provisional Certificate for COVID-19 Vaccination</title>
   </head>
   <body>
     {{# each details}}
-    <h1>Vaccine Info</h1>
-    <ul>
-      <li>Name: {{this.name}}</li>
-      <li>Age: {{this.age}}</li>
-      <li>Gender: {{this.gender}}</li>
-      <li>Date of Birth: {{this.dob}}</li>
-      <li>AadharNumber : {{this.aadharNumber}}</li>
-      <li>address: {{this.address}}</li>
-      <li>phone: {{this.mobile}}</li>
-      <li>email : {{this.email}}</li>
-      <li>vaccinated: {{this.vaccinated}}</li>
+    <h3 style="color: rgb(1, 1, 126);">Provisional Certificate for COVID-19 Vaccination</h1>
+    <h4 style="color: rgb(1, 1, 126);"><u>Beneficiary Details</u></h3>
+    <table style="padding: 30px;">
+      <tr>
+        <td>Beneficiary Name</td>
+        <td style="padding-left: 30px;">{{this.name}}</td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td style="padding-left: 30px;">{{this.age}}</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td style="padding-left: 30px;">{{this.gender}}</td>
+      </tr>
+      <tr>
+        <td>ID Verified</td>
+        <td style="padding-left: 30px;">{{this.aadharNumber}}</td>
+      </tr>
+    </table>
+    <img src={{this.Qrcode}}/>
       <br />
       {{/each}}
     </ul>

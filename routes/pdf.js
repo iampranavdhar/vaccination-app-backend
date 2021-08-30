@@ -2,7 +2,7 @@ import express from 'express';
 import pdf from 'pdf-creator-node'
 import fs from 'fs'
 import User from '../models/User.js';
-import { resolveSoa } from 'dns';
+import QRCode from 'qrcode';
 
 const router = express.Router()
 
@@ -36,9 +36,12 @@ router.post("/pdf", async (req, res) => {
                 }
             }
         };
+
+        const data = `Name:${user.UserFullName}\nAge:${user.age}\nVaccinated:Yes`
+
         var details = [
             {
-            name: user.UserFullName,
+            name: user.userFullName,
             age: user.age,
             gender: user.gender,
             dob: user.dob,
@@ -47,6 +50,7 @@ router.post("/pdf", async (req, res) => {
             mobile:user.mobileNumber,
             email:user.email,
             vaccinated:false,
+            Qrcode : await QRCode.toDataURL(data)
             },
         ];
         var document = {
@@ -57,6 +61,7 @@ router.post("/pdf", async (req, res) => {
             path: `./${user.aadharNumber}.pdf`,
             type: "",
         };
+
         await pdf
         .create(document, options)
         
